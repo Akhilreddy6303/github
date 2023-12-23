@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-In / Sign-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url("login2.jpg");
+            /* background-position: left; */
+            padding-right: 300px;
+            background-size: cover;
+            
+        }
+        form {
+            display: grid;
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            backdrop-filter: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            
+            
+    
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container .form-toggle {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .form-container .form-toggle button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        .form-container .form-toggle #signin-tab {
+            background-color:#45a049;
+            color: #fff;
+            margin-right: 5px;
+            font-weight: bold;
+            
+            
+        }
+
+        .form-container .form-toggle #signup-tab {
+            background-color: #45a049;
+            background-color: #ddd;
+            color: #333;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        .form-container .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-container .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+            
+        }
+
+        .form-container .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            
+        }
+
+        .form-container .form-group button {
+            background-color: #45a049;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 40%;
+            
+
+            
+          
+}
+
+        .form-container .form-group button:hover {
+            background-color: orange;
+        align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <h2>Restaurant</h2>
+        <div class="form-toggle">
+            <button id="signin-tab">Sign In</button>
+            <button id="signup-tab">Sign Up</button>
+        </div>
+
+        <!-- Sign-In Form -->
+        <form method="post" id="signin-form" class="form-group">
+            
+            <label for="signin-username">Username:</label>
+            <input type="text" id="signin-username" name="signin-username" required>
+
+            <label for="signin-password">Password:</label>
+            <input type="password" id="signin-password" name="signin-password" required>
+            
+
+            <button type="submit">Sign In</button>
+        </form>
+
+        <!-- Sign-Up Form -->
+        <form id="signup-form" class="form-group" style="display: none;">
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" name="signup-username" required>
+
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="signup-email" required>
+
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="signup-password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signup-tab').addEventListener('click', function() {
+            document.getElementById('signup-form').style.display = 'block';
+            document.getElementById('signin-form').style.display = 'none';
+            document.getElementById('signup-tab').style.backgroundColor = '#4caf50';
+            document.getElementById('signin-tab').style.backgroundColor = '#ddd';
+        });
+
+        document.getElementById('signin-tab').addEventListener('click', function() {
+            document.getElementById('signin-form').style.display = 'block';
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('signin-tab').style.backgroundColor = '#4caf50';
+            document.getElementById('signup-tab').style.backgroundColor = '#ddd';
+        });
+    </script>
+</body>
+</html>
